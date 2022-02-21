@@ -12,6 +12,11 @@ Take a look at the figma design I created before making any UI changes to the ap
 
 
 
+<!-- 
+include 
+    build flavors
+    localization
+-->
 
 
 <!-- - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
