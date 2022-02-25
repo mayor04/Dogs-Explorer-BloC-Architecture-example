@@ -1,4 +1,4 @@
-part of 'explore_list_cubit.dart';
+part of 'explore_list_bloc.dart';
 
 @immutable
 abstract class ExploreListState {}

@@ -1,0 +1,3 @@
+class BreedListRepository {
+  String baseUrl = '';
+}
