@@ -1,16 +1,18 @@
-class BreedDataodel {
+class BreedDataModel {
   final String name;
   final String imageUrl;
   final List<String> subBreed;
 
-  BreedDataodel({
+  int get subBreedCount => subBreed.length;
+
+  BreedDataModel({
     required this.name,
     required this.imageUrl,
     required this.subBreed,
   });
 
-  factory BreedDataodel.fromJson(Map<String, dynamic> json) {
-    return BreedDataodel(
+  factory BreedDataModel.fromJson(Map<String, dynamic> json) {
+    return BreedDataModel(
       name: json['name'],
       imageUrl: json['imageUrl'],
       subBreed: json['subBreed'].cast<String>(),

@@ -7,7 +7,7 @@ class LocalBreedList {
       var breedName = localMapKeys[i];
       var subBreedList = localMap[breedName];
 
-      breedList.add({'name': breedList, 'subBreeds': subBreedList});
+      breedList.add({'name': breedName, 'subBreeds': subBreedList});
     }
 
     return breedList;

@@ -1,8 +1,11 @@
 import 'package:dog_app/core/constant/colors.dart';
 import 'package:dog_app/core/utils/extension.dart';
+import 'package:dog_app/data_layer/models/breed_data_model.dart';
+import 'package:dog_app/features/bloc/explore_list_bloc/explore_list_bloc.dart';
 import 'package:dog_app/services/navigation_services.dart';
 import 'package:dog_app/widget/box_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ExploreView extends StatelessWidget {
   const ExploreView({Key? key}) : super(key: key);
@@ -48,18 +51,28 @@ class ExploreView extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(26, 0, 26, 0),
-                child: GridView.builder(
-                  itemCount: 20,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 26,
-                    mainAxisSpacing: 20,
-                    mainAxisExtent: 196,
-                  ),
-                  itemBuilder: (_, index) {
-                    return const DogItemBox();
-                  },
-                ),
+                child: BlocBuilder<ExploreListBloc, ExploreListState>(
+                    builder: (context, state) {
+                  if (state.status == ExploreListStatus.initial) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  return GridView.builder(
+                    itemCount: 20,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 26,
+                      mainAxisSpacing: 20,
+                      mainAxisExtent: 196,
+                    ),
+                    itemBuilder: (_, index) {
+                      return DogItemBox(breedData: state.breedList[index]);
+                    },
+                  );
+                }),
               ),
             ),
           ],
@@ -70,7 +83,8 @@ class ExploreView extends StatelessWidget {
 }
 
 class DogItemBox extends StatelessWidget {
-  const DogItemBox({Key? key}) : super(key: key);
+  final BreedDataModel breedData;
+  const DogItemBox({Key? key, required this.breedData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,16 +96,37 @@ class DogItemBox extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Expanded(
+            Expanded(
               child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Placeholder(),
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  color: Colors.black.withOpacity(0.8),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.network(
+                      breedData.imageUrl,
+                      fit: BoxFit.cover,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+
+                        return Container(
+                          color: Colors.red,
+                        );
+                      },
+                      errorBuilder: (_, a, b) => Container(
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(11, 3, 0, 0),
               child: Text(
-                'Name',
+                breedData.name,
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge
@@ -101,7 +136,7 @@ class DogItemBox extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(11, 0, 0, 13),
               child: Text(
-                'breed: 3',
+                'breed: ${breedData.subBreedCount}',
                 style: Theme.of(context).textTheme.labelSmall,
               ),
             ),

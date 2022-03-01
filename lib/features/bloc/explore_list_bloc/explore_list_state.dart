@@ -1,6 +1,14 @@
 part of 'explore_list_bloc.dart';
 
-@immutable
-abstract class ExploreListState {}
+enum ExploreListStatus { initial, success, error }
 
-class ExploreListInitial extends ExploreListState {}
+@immutable
+class ExploreListState {
+  final ExploreListStatus status;
+  final List<BreedDataModel> breedList;
+
+  const ExploreListState({
+    this.status = ExploreListStatus.initial,
+    this.breedList = const [],
+  });
+}

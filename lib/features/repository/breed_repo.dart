@@ -2,13 +2,13 @@ import 'package:dog_app/data_layer/local_data_source/local_breed_list.dart';
 import 'package:dog_app/data_layer/models/breed_data_model.dart';
 import 'package:dog_app/data_layer/remote_api/dog_api.dart';
 
-class BreedListRepository {
+class BreedRepository {
   late final LocalBreedList _localBreedList;
   late final DogApi _dogApi;
 
   String baseUrl = '';
 
-  BreedListRepository({
+  BreedRepository({
     required LocalBreedList localBreedList,
     required DogApi dogApi,
   }) {
@@ -16,8 +16,9 @@ class BreedListRepository {
     _dogApi = dogApi;
   }
 
-  Future<List> listOfBreeds({int start = 0, int limit = 20}) async {
-    List<BreedDataodel> breedData = [];
+  Future<List<BreedDataModel>> listOfBreeds(
+      {int start = 0, int limit = 20}) async {
+    List<BreedDataModel> breedData = [];
 
     //Get the list locally
     var breedList = _localBreedList.getBreedList(start: start, limit: limit);
@@ -26,7 +27,7 @@ class BreedListRepository {
       String breedName = breed['name'];
 
       //From the list get a matching random image for each breed
-      late List<String> images;
+      List images = [];
 
       try {
         images = await _dogApi.getRadomDogImage(
@@ -37,14 +38,14 @@ class BreedListRepository {
       }
 
       if (images.isEmpty) {
-        break;
+        continue;
       }
 
       //in the loop add the image to the breed object
-      var breedModel = BreedDataodel(
+      var breedModel = BreedDataModel(
         name: breedName,
         imageUrl: images[0],
-        subBreed: breed['subBreed'],
+        subBreed: breed['subBreeds'].cast<String>() ?? [],
       );
 
       breedData.add(breedModel);
