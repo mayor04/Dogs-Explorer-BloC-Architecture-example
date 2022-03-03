@@ -16,4 +16,18 @@ class AppColors {
 
   static const Color iconColor = Color(0xFF6F6F6F);
   static const Color dividerColor = Color(0xFFEAEAEA);
+
+  //Shimmer
+  static const Color shimmerBase = Color(0xFFE1E0E0);
+  static const Color shimmerHighlight = Color(0xFFF2F2F2);
+  static const Color shimmerBg = Color.fromARGB(255, 157, 157, 157);
+}
+
+class AppGradient {
+  static const List<Color> appBarOverlay = [
+    Color(0x8C000000),
+    Color(0x7A000000),
+    Color(0x4F000000),
+    Color(0x14000000),
+  ];
 }

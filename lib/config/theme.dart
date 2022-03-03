@@ -73,11 +73,22 @@ class AppTheme {
         fontWeight: FontWeight.bold,
         color: AppColors.bodyMedium,
       ),
+      titleMedium: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: AppColors.shadowColor,
+      ),
       labelSmall: TextStyle(
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: FontWeight.w400,
         color: AppColors.labelSmall,
       ),
     );
+  }
+}
+
+extension ResponsiveColor on ColorScheme {
+  Color get descriptionColor {
+    return AppColors.labelSmall;
   }
 }

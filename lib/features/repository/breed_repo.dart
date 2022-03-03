@@ -1,17 +1,22 @@
 import 'package:dog_app/data_layer/local_data_source/local_breed_list.dart';
 import 'package:dog_app/data_layer/models/breed_data_model.dart';
+import 'package:dog_app/data_layer/models/details_model.dart';
+import 'package:dog_app/data_layer/remote_api/details_scapper.dart';
 import 'package:dog_app/data_layer/remote_api/dog_api.dart';
 
 class BreedRepository {
   late final LocalBreedList _localBreedList;
   late final DogApi _dogApi;
+  late final DetailsScraper _detailsScraper;
 
   String baseUrl = '';
 
   BreedRepository({
     required LocalBreedList localBreedList,
     required DogApi dogApi,
+    required DetailsScraper detailsScraper,
   }) {
+    _detailsScraper = detailsScraper;
     _localBreedList = localBreedList;
     _dogApi = dogApi;
   }
@@ -52,5 +57,22 @@ class BreedRepository {
     }
 
     return breedData;
+  }
+
+  Future<BreedDetailsModel> getBreedDetails(String breedName) async {
+    try {
+      var description = await _detailsScraper.getDetails(breedName);
+      var images =
+          await _dogApi.getRadomDogImage(breedName: breedName, count: 3);
+
+      return BreedDetailsModel(
+        breedName: breedName,
+        breedDescription: description,
+        breedImages: images.cast<String>(),
+      );
+    } catch (e) {
+      //TODO: throw error class
+      throw 'error';
+    }
   }
 }

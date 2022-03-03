@@ -11,3 +11,24 @@ extension DebugBorder on Widget {
     );
   }
 }
+
+extension SafeList<T> on List<T> {
+  ///Returns null when the element at the index
+  ///is not present
+  T? itemAt(int index) {
+    if (index >= length) {
+      return null;
+    }
+    return this[index];
+  }
+}
+
+extension Theming on BuildContext {
+  TextTheme get textTheme {
+    return Theme.of(this).textTheme;
+  }
+
+  ColorScheme get colorScheme {
+    return Theme.of(this).colorScheme;
+  }
+}

@@ -1,4 +1,5 @@
 import 'package:dog_app/config/routes.dart';
+import 'package:dog_app/data_layer/models/breed_data_model.dart';
 import 'package:flutter/material.dart';
 
 class NavigationService {
@@ -17,8 +18,8 @@ class NavigationService {
     return _navigateToNamed(AppRoutes.explore);
   }
 
-  Future<dynamic>? navigateToDetailsView() {
-    return _navigateToNamed(AppRoutes.breedDetails);
+  Future<dynamic>? navigateToDetailsView(BreedDataModel breedDataModel) {
+    return _navigateToNamed(AppRoutes.breedDetails, args: breedDataModel);
   }
 
   Future<T?>? _navigateTo<T>(Route<T> route) {

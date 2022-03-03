@@ -1,6 +1,6 @@
 class BreedDetailsModel {
   String breedName;
-  String breedDescription;
+  List<String> breedDescription;
   List<String> breedImages;
 
   BreedDetailsModel({
