@@ -51,11 +51,11 @@ Bloc is a fantanstic state mangement approach in flutter — with bloc pattern w
 
 <a id="demo"></a>
 <div style="display:flex; flex-wrap: wrap;">
-    <img style="margin: 20px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(2).jpg" alt="screenshot" width="" height="350">
-    <img style="margin: 20px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(1).jpg" alt="screenshot" width="" height="350">
-    <img style="margin: 20px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(3).jpg" alt="screenshot" width="" height="350">
-    <img style="margin: 20px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(8).jpg" alt="screenshot" width="" height="350">
-    <img style="margin: 20px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(6).jpg" alt="screenshot" width="" height="350">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(2).jpg" alt="screenshot" width="" height="350">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(1).jpg" alt="screenshot" width="" height="400">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(3).jpg" alt="screenshot" width="" height="400">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(8).jpg" alt="screenshot" width="" height="400">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(6).jpg" alt="screenshot" width="" height="400">
 </div>
 
 
