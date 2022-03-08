@@ -51,23 +51,49 @@ Bloc is a fantanstic state mangement approach in flutter — with bloc pattern w
 
 <a id="demo"></a>
 <div style="display:flex; flex-wrap: wrap;">
-    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(2).jpg" alt="screenshot" width="" height="350">
-    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(1).jpg" alt="screenshot" width="" height="400">
-    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(3).jpg" alt="screenshot" width="" height="400">
-    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(8).jpg" alt="screenshot" width="" height="400">
-    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(6).jpg" alt="screenshot" width="" height="400">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(2).jpg" alt="screenshot"  height="550px">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(1).jpg" alt="screenshot"  height="550px">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(3).jpg" alt="screenshot"  height="550px">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(8).jpg" alt="screenshot" height="550px">
+    <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(6).jpg" alt="screenshot" height="550px">
 </div>
 
 
 ## Installation
-Clone this repo to your pc by using this link
-(show how to clone the repo)
 
-Take a look at the figma design I created before making any UI changes to the app :)
+Download or clone this repo by using the link below:
 
-## Introduction
+```
+https://github.com/zubairehman/flutter-boilerplate-project.git
+```
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
 
 
+## Packages used
+
+|  Package|
+-----------
+|  flutter_bloc: ^8.0.1|
+|  dio: ^4.0.4|
+|  web_scraper: ^0.1.4|
+|  bloc_test: ^9.0.3|
+|  equatable: ^2.0.3|
+|  bloc_concurrency: ^0.2.0|
+|  flutter_native_splash: ^2.0.5|
+|  google_fonts: ^2.3.1|
+|  shimmer: ^2.0.0|
+
+The project also uses the new material 3 design pattern for theming and slivers for displaying list
+
+## How to contribute
+Feel free to modify the code to aid understanding the project. You may contribute by opening an issue or sending a pull request
+
+:)
 
 
 <!-- 

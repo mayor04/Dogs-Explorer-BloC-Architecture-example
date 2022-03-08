@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc_concurrency: ^0.2.0
   cupertino_icons: ^1.0.2
   dio: ^4.0.4
   equatable: ^2.0.3
@@ -39,9 +40,13 @@ dependencies:
   web_scraper: ^0.1.4
 
 dev_dependencies:
+  bloc_test: ^9.0.3
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  image: assets/app/logo.png
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
