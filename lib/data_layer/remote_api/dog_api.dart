@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:dog_app/core/utils/logg.dart';
+import 'package:dog_app/data_layer/remote_api/base_api.dart';
 
 class DogApi {
   var log = AppLog('DogApi');
-  late Dio _dio;
+  final IApiHandler _apiHandler;
 
-  DogApi() {
-    _dio = Dio();
-  }
+  DogApi(this._apiHandler);
 
   Future<List<dynamic>> getRadomDogImage(
       {required String breedName, String? subBreedName, int count = 1}) async {
@@ -20,7 +19,7 @@ class DogApi {
 
       path += '/images/random/$count';
 
-      var response = await _dio.get(path);
+      var response = await _apiHandler.get(path);
       var responseMap = response.data;
 
       if (responseMap['status'] != 'success') {

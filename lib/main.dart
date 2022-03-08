@@ -1,5 +1,6 @@
 import 'package:dog_app/core/constant/strings.dart';
 import 'package:dog_app/data_layer/local_data_source/local_breed_list.dart';
+import 'package:dog_app/data_layer/remote_api/base_api.dart';
 import 'package:dog_app/data_layer/remote_api/details_scapper.dart';
 import 'package:dog_app/data_layer/remote_api/dog_api.dart';
 import 'package:dog_app/features/bloc/details_bloc/breed_details_bloc.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final breedRepo = BreedRepository(
       localBreedList: LocalBreedList(),
-      dogApi: DogApi(),
+      dogApi: DogApi(ApiHandler()),
       detailsScraper: DetailsScraper(),
     );
 

@@ -56,15 +56,23 @@ class _DetailsViewState extends State<DetailsView> {
                   SliverAppBar(
                     stretch: true,
                     title: Text(
-                      'Title',
+                      breedData.name,
                       style: context.textTheme.bodyLarge?.copyWith(
                         color: Colors.white,
                       ),
                     ),
                     flexibleSpace: FlexibleSpaceBar(
+                      stretchModes: const [StretchMode.zoomBackground],
                       background: Stack(
+                        fit: StackFit.expand,
                         children: [
+                          NetworkImageBox(
+                            url: breedData.imageUrl,
+                          ),
                           Positioned(
+                            top: 0,
+                            left: 0,
+                            right: 0,
                             child: Container(
                               height: kToolbarHeight + 25,
                               decoration: const BoxDecoration(
@@ -75,9 +83,6 @@ class _DetailsViewState extends State<DetailsView> {
                                 ),
                               ),
                             ),
-                          ),
-                          NetworkImageBox(
-                            url: breedData.imageUrl,
                           ),
                         ],
                       ),
