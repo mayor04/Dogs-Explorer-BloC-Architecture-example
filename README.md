@@ -79,7 +79,7 @@ flutter pub get
 ## Packages used
 
 |  Package|
------------
+|---------|
 |  flutter_bloc: ^8.0.1|
 |  dio: ^4.0.4|
 |  web_scraper: ^0.1.4|
