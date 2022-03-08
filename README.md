@@ -1,23 +1,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/">
+    <img src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/app/logo.png" alt="Logo" width="" height="70">
   </a>
 
 <h3 align="center">Dogs Explorer</h3>
 
   <p align="center">
-    project_description
+    An app for purshasing and exploring different breeds of dogs
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/blob/master/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/issues/new">Request Feature</a>
   </p>
 </div>
 <p style="height:50px"></p>
@@ -34,10 +34,6 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -48,8 +44,13 @@
   </ol>
 </details>
 
+<a id="about-the-project"></a>
+
 ## Dogs Explorer (BloC Architecture example)
 Bloc is a fantanstic state mangement approach in flutter — with bloc pattern we would be able to create very high quality and maintainable code if implemented right because bloc uses design pattern which we are most familiar with. This project would be used to show how well we can utilize bloc by building an app that shows dogs according to breeds, their characteristics and several images of dogs.
+
+<a id="demo"></a>
+
 
 ## Installation
 Clone this repo to your pc by using this link
