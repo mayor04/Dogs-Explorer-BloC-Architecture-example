@@ -50,7 +50,7 @@
 Bloc is a fantanstic state mangement approach in flutter — with bloc pattern we would be able to create very high quality and maintainable code if implemented right because bloc uses design pattern which we are most familiar with. This project would be used to show how well we can utilize bloc by building an app that shows dogs according to breeds, their characteristics and several images of dogs.
 
 <a id="demo"></a>
-<div style="display:flex; flex-wrap: wrap;">
+<div style="display:flex; flex-wrap: wrap; gap: 18px;">
     <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(2).jpg" alt="screenshot"  height="550px">
     <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(1).jpg" alt="screenshot"  height="550px">
     <img style="margin: 30px" src="https://github.com/mayor04/Dogs-Explorer-BloC-Architecture-example/raw/master/assets/screenshots/post%20(3).jpg" alt="screenshot"  height="550px">
