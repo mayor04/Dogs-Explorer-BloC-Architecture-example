@@ -35,6 +35,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_native_splash: ^2.0.5
+  go_router: ^3.0.6
   google_fonts: ^2.3.1
   shimmer: ^2.0.0
   web_scraper: ^0.1.4

@@ -6,20 +6,33 @@ import 'package:dog_app/data_layer/remote_api/dog_api.dart';
 import 'package:dog_app/features/bloc/details_bloc/breed_details_bloc.dart';
 import 'package:dog_app/features/bloc/explore_list_bloc/explore_list_bloc.dart';
 import 'package:dog_app/features/repository/breed_repo.dart';
+import 'package:dog_app/features/view/details_view.dart';
+import 'package:dog_app/features/view/explore_view.dart';
 import 'package:dog_app/features/view/intro_view.dart';
 import 'package:dog_app/services/navigation_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'config/routes.dart';
 import 'config/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +51,50 @@ class MyApp extends StatelessWidget {
           create: (_) => BreedDetailsBloc(breedRepo),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: AppStrings.appName,
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         darkTheme: AppTheme.darkTheme,
-        home: const IntroView(),
-        navigatorKey: NavigationService().navigatorKey,
-        onGenerateRoute: AppRoutes.generateRoutes,
+        routeInformationParser: _router.routeInformationParser,
+        routerDelegate: _router.routerDelegate,
       ),
     );
   }
+
+  final _router = GoRouter(
+    urlPathStrategy: UrlPathStrategy.path,
+    debugLogDiagnostics: true,
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const IntroView(),
+      ),
+      GoRoute(
+        name: 'explore',
+        path: '/explore',
+        builder: (context, state) {
+          return ExploreView(
+            key: state.pageKey,
+          );
+        },
+        routes: [
+          GoRoute(
+            name: 'details',
+            path: 'details/:name',
+            builder: (context, state) {
+              String? name = state.params['name'];
+              var breedDataModel =
+                  context.read<ExploreListBloc>().state.breedFromName(name);
+
+              return DetailsView(
+                key: state.pageKey,
+                breedDataModel: breedDataModel!,
+              );
+            },
+          ),
+        ],
+      ),
+    ],
+  );
 }

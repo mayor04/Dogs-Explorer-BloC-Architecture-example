@@ -8,10 +8,21 @@ import 'package:dog_app/widget/box_spacing.dart';
 import 'package:dog_app/widget/breed_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 
-class ExploreView extends StatelessWidget {
+class ExploreView extends StatefulWidget {
   const ExploreView({Key? key}) : super(key: key);
+
+  @override
+  State<ExploreView> createState() => _ExploreViewState();
+}
+
+class _ExploreViewState extends State<ExploreView> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +118,7 @@ class DogItemBox extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (breedData == null) return;
-        NavigationService().navigateToDetailsView(breedData!);
+        context.pushNamed('details', params: {'name': breedData!.name});
       },
       child: Card(
         child: Column(

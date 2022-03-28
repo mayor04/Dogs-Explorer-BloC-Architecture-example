@@ -18,6 +18,10 @@ class ExploreListState {
     return breedList.itemAt(index);
   }
 
+  BreedDataModel? breedFromName(String? name) {
+    return breedList.firstWhere((element) => element.name == name);
+  }
+
   const ExploreListState({
     this.status = ExploreListStatus.initial,
     this.breedList = const [],

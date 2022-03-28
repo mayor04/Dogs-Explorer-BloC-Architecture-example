@@ -3,6 +3,7 @@ import 'package:dog_app/core/utils/extension.dart';
 import 'package:dog_app/services/navigation_services.dart';
 import 'package:dog_app/widget/box_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class IntroView extends StatefulWidget {
   const IntroView({Key? key}) : super(key: key);
@@ -60,7 +61,7 @@ class _IntroViewState extends State<IntroView> {
                 padding: const EdgeInsets.fromLTRB(60, 30, 60, 30),
                 child: ElevatedButton(
                   onPressed: () {
-                    NavigationService().navigateToExploreView();
+                    context.push('/explore');
                   },
                   child: const Center(
                     child: Text('EXPLORE'),

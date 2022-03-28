@@ -7,6 +7,7 @@ import 'package:dog_app/widget/box_spacing.dart';
 import 'package:dog_app/widget/breed_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class DetailsView extends StatefulWidget {
   final BreedDataModel breedDataModel;
@@ -262,7 +263,9 @@ class _BottomItemButton extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push('/explore/details/affenpinscher');
+              },
               child: const Center(
                 child: Text('SAVE BREED'),
               ),
